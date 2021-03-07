@@ -14,7 +14,7 @@ app.listen(3040)
 //Rota = conjunto
 // Recurso = index
 
-// Método HTTP = GET, POST, PUT, DELETE 
+// Método HTTP = GET, POST, PUT, DELETE
 
 // GET = Buscar uma informação (Lista, item)
 // POST = Criar uma informação

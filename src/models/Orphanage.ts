@@ -1,3 +1,4 @@
+/* eslint-disable no-mixed-spaces-and-tabs */
 import { Entity, Column, PrimaryGeneratedColumn,OneToMany, JoinColumn } from 'typeorm'
 import Image from './Image'
 
@@ -11,7 +12,7 @@ export default class Orphanage {
 
   @Column()
   latitude: number;
-  
+
   @Column()
   longitude: number;
 
@@ -25,11 +26,11 @@ export default class Orphanage {
   opening_hours: string;
 
   @Column()
-  open_on_weekends: boolean;  
+  open_on_weekends: boolean;
 
   @OneToMany(() => Image, image => image.orphanage, {
-    cascade: ['insert', 'update'] // cascade é responsável por criar e atualizar as imagens no banco de dados.
+  	cascade: ['insert', 'update'] // cascade é responsável por criar e atualizar as imagens no banco de dados.
   })
-  @JoinColumn({ name: "orphanage_id"})
+  @JoinColumn({ name: 'orphanage_id'})
   images: Image[]
 }
