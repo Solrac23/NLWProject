@@ -1,14 +1,22 @@
 import express from 'express'
-import './database/connection'
-
+import cors from 'cors'
+import path from 'path'
 import routes from './routes'
+import 'express-async-errors'
+
+import './database/connection'
 
 const app = express()
 
+app.use(cors())
 app.use(express.json()) // Essa função fala ao express a entender o que é JSON.
 app.use(routes)
 
-app.listen(3040)
+app.use('/images', express.static(path.join(__dirname, '..', 'uploads')))
+
+app.listen(3040, () => {
+	console.log('Server is running!')
+})
 
 
 //Rota = conjunto

@@ -1,10 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, ManyToOne, JoinColumn } from 'typeorm'
-import Orphanage from './Orphanage'
+/* eslint-disable no-mixed-spaces-and-tabs */
+import { Entity, Column, ManyToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
+import { Orphanage } from './Orphanage'
 
 @Entity('images')
-export default class Image {
-  @PrimaryGeneratedColumn('increment')
-  id: number
+class Image {
+  @PrimaryGeneratedColumn('uuid')
+  id: string
 
   @Column()
   path: string
@@ -12,4 +13,7 @@ export default class Image {
   @ManyToOne(() => Orphanage, orphanage => orphanage.images)
   @JoinColumn({ name: 'orphanage_id'})
   orphanage: Orphanage
+
 }
+
+export { Image }

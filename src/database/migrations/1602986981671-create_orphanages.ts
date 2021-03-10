@@ -9,11 +9,11 @@ export class createOrphanages1602986981671 implements MigrationInterface {
 			columns: [
 				{
 					name: 'id',
-					type: 'integer',
+					type: 'uuid',
 					unsigned: true,
 					isPrimary: true,
 					isGenerated: true,
-					generationStrategy: 'increment',
+					generationStrategy: 'uuid',
 				},
 				{
 					name: 'name',

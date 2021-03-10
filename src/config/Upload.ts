@@ -5,12 +5,10 @@ export default {
 	storage: multer.diskStorage({
 		destination: path.join(__dirname, '..', '..', 'uploads'),
 		filename: (req, file, cb) =>  {
-			const filename = `${Date.now()}-${file.originalname}`
-
-			cb(null, filename)
+			cb(null, `${Date.now()}-${file.originalname}`)
 		},
 	}),
-	limits:{
+	limits: {
 		fileSize: 4 * 1024 * 1024 // 4MB
 	},
 	fileFilter: (req, file, cb) => {
